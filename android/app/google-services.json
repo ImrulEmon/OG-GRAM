@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "988266955642",
+    "project_id": "og-gram-imrul",
+    "storage_bucket": "og-gram-imrul.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:988266955642:android:7cbb68d517434407df4cc3",
+        "android_client_info": {
+          "package_name": "com.example.og_gram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "988266955642-lak8pgv6b7rrdvr1qhhs0jqm3q6d127h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeb3JtFOrv-5WAZ-5-W6b339LNaGhKhFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "988266955642-lak8pgv6b7rrdvr1qhhs0jqm3q6d127h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
