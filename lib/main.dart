@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:og_gram/state/auth/backend/authenticator.dart';
 import 'firebase_options.dart';
+
+import 'dart:developer' as devtools show log;
+
+extension Log on Object {
+  void log() => devtools.log(toString());
+}
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -43,8 +50,29 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
         title: const Text('OG-GRAM'),
       ),
-      body: const Center(
-        child: Text('OG HOME PAGE'),
+      body: Center(
+        child: Column(
+          children: [
+            TextButton(
+              onPressed: () async {
+                final result = await Authenticator().loginWithGoogle();
+                result.log();
+              },
+              child: const Text(
+                'Google Sign In',
+              ),
+            ),
+            TextButton(
+              onPressed: () async {
+                final result = await Authenticator().loginWithFacebook();
+                result.log();
+              },
+              child: const Text(
+                'Facebook Sign In',
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
