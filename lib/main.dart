@@ -4,6 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:og_gram/state/auth/backend/authenticator.dart';
 import 'package:og_gram/state/auth/models/auth_result.dart';
 import 'package:og_gram/state/auth/providers/auth_state_provider.dart';
+import 'package:og_gram/state/providers/is_loading_provider.dart';
 import 'package:og_gram/views/components/loading/loading_screen.dart';
 // import 'package:og_gram/state/auth/providers/is_logged_in_provider.dart';
 import 'firebase_options.dart';
@@ -46,6 +47,16 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.dark,
       home: Consumer(
         builder: (context, ref, child) {
+          ref.listen<bool>(isLoadingProvider, (_, isLoading) {
+            if (isLoading) {
+              LoadingScreen.instance().show(
+                context: context,
+              );
+            } else {
+              LoadingScreen.instance().hide();
+            }
+          });
+
           final isLoggedIn =
               ref.watch(authStateProvider).result == AuthResult.success;
           if (isLoggedIn) {
