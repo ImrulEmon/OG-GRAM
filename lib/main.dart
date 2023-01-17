@@ -6,6 +6,7 @@ import 'package:og_gram/state/auth/models/auth_result.dart';
 import 'package:og_gram/state/auth/providers/auth_state_provider.dart';
 import 'package:og_gram/state/providers/is_loading_provider.dart';
 import 'package:og_gram/views/components/loading/loading_screen.dart';
+import 'package:og_gram/views/login/login_view.dart';
 // import 'package:og_gram/state/auth/providers/is_logged_in_provider.dart';
 import 'firebase_options.dart';
 
@@ -98,34 +99,34 @@ class MainView extends StatelessWidget {
 }
 
 // When you are not logged in
-class LoginView extends ConsumerWidget {
-  const LoginView({
-    Key? key,
-  }) : super(key: key);
+// class LoginView extends ConsumerWidget {
+//   const LoginView({
+//     Key? key,
+//   }) : super(key: key);
 
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text('Login View'),
-      ),
-      body: Column(
-        children: [
-          TextButton(
-            onPressed: ref.read(authStateProvider.notifier).loginWithGoogle,
-            child: const Text(
-              'Google Sign In',
-            ),
-          ),
-          TextButton(
-            onPressed: ref.read(authStateProvider.notifier).loginWithFacebook,
-            child: const Text(
-              'Facebook Sign In',
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context, WidgetRef ref) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         centerTitle: true,
+//         title: const Text('Login View'),
+//       ),
+//       body: Column(
+//         children: [
+//           TextButton(
+//             onPressed: ref.read(authStateProvider.notifier).loginWithGoogle,
+//             child: const Text(
+//               'Google Sign In',
+//             ),
+//           ),
+//           TextButton(
+//             onPressed: ref.read(authStateProvider.notifier).loginWithFacebook,
+//             child: const Text(
+//               'Facebook Sign In',
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
