@@ -3,7 +3,7 @@ import 'package:og_gram/state/auth/backend/authenticator.dart';
 import 'package:og_gram/state/auth/models/auth_result.dart';
 import 'package:og_gram/state/auth/models/auth_state.dart';
 import 'package:og_gram/state/posts/typedefs/user_id.dart';
-import 'package:og_gram/state/user_info/models/backend/user_info_storage.dart';
+import 'package:og_gram/state/user_info/backend/user_info_storage.dart';
 
 class AuthStateNotifier extends StateNotifier<AuthState> {
   final _authenticator = Authenticator();

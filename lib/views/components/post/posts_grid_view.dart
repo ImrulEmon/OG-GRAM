@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:og_gram/state/posts/models/post.dart';
 import 'package:og_gram/views/components/post/post_thumbnail_view.dart';
+import 'package:og_gram/views/post_comments/post_comments_view.dart';
 
 class PostsGridView extends StatelessWidget {
   final Iterable<Post> posts;
@@ -25,6 +26,8 @@ class PostsGridView extends StatelessWidget {
         return PostThumbnailView(
           post: post,
           onTapped: () {
+            // Navigate to post Details view
+
             // Navigator.push(
             //   context,
             //   MaterialPageRoute(
