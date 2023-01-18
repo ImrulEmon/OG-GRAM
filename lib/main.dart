@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:og_gram/state/auth/backend/authenticator.dart';
 import 'package:og_gram/state/auth/models/auth_result.dart';
 import 'package:og_gram/state/auth/providers/auth_state_provider.dart';
 import 'package:og_gram/state/providers/is_loading_provider.dart';
@@ -97,36 +96,3 @@ class MainView extends StatelessWidget {
     );
   }
 }
-
-// When you are not logged in
-// class LoginView extends ConsumerWidget {
-//   const LoginView({
-//     Key? key,
-//   }) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context, WidgetRef ref) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         centerTitle: true,
-//         title: const Text('Login View'),
-//       ),
-//       body: Column(
-//         children: [
-//           TextButton(
-//             onPressed: ref.read(authStateProvider.notifier).loginWithGoogle,
-//             child: const Text(
-//               'Google Sign In',
-//             ),
-//           ),
-//           TextButton(
-//             onPressed: ref.read(authStateProvider.notifier).loginWithFacebook,
-//             child: const Text(
-//               'Facebook Sign In',
-//             ),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
