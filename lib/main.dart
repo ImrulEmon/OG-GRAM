@@ -6,6 +6,7 @@ import 'package:og_gram/state/auth/providers/auth_state_provider.dart';
 import 'package:og_gram/state/providers/is_loading_provider.dart';
 import 'package:og_gram/views/components/loading/loading_screen.dart';
 import 'package:og_gram/views/login/login_view.dart';
+import 'package:og_gram/views/main/main_view.dart';
 // import 'package:og_gram/state/auth/providers/is_logged_in_provider.dart';
 import 'firebase_options.dart';
 
@@ -60,7 +61,7 @@ class MyApp extends StatelessWidget {
           final isLoggedIn =
               ref.watch(authStateProvider).result == AuthResult.success;
           if (isLoggedIn) {
-            return const MainView();
+            return MainView();
           } else {
             return const LoginView();
           }
@@ -71,28 +72,28 @@ class MyApp extends StatelessWidget {
 }
 
 // When you are already logged in
-class MainView extends StatelessWidget {
-  const MainView({super.key});
+// class MainView extends StatelessWidget {
+//   const MainView({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text('Main View'),
-      ),
-      body: Center(
-        child: Consumer(
-          builder: (context, ref, child) {
-            return TextButton(
-              onPressed: () async {
-                await ref.read(authStateProvider.notifier).logOut();
-              },
-              child: const Text('Logout'),
-            );
-          },
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         centerTitle: true,
+//         title: const Text('Main View'),
+//       ),
+//       body: Center(
+//         child: Consumer(
+//           builder: (context, ref, child) {
+//             return TextButton(
+//               onPressed: () async {
+//                 await ref.read(authStateProvider.notifier).logOut();
+//               },
+//               child: const Text('Logout'),
+//             );
+//           },
+//         ),
+//       ),
+//     );
+//   }
+// }
